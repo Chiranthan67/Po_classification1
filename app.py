@@ -1,14 +1,17 @@
-import streamlit as st
 import json
-from classifier import classify_po
+import streamlit as st
 
+# Page configuration
 st.set_page_config(page_title="PO Category Classifier", layout="centered")
 
+# App title
 st.title("📦 PO L1–L2–L3 Classifier")
 
+# Inputs
 po_description = st.text_area("PO Description", height=120)
 supplier = st.text_input("Supplier (optional)")
 
+# Action
 if st.button("Classify"):
     if not po_description.strip():
         st.warning("Please enter a PO description.")
